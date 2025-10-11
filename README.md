@@ -74,7 +74,7 @@ leap i from 0 to 5 {
 
 -- Functions
 howl calculate_area(length, width) {
-    return length moo width  -- Multiplication
+    length moo width sniffback  -- Multiplication
 }
 
 area -> calculate_area(5, 10)
