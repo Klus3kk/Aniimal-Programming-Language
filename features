@@ -247,15 +247,7 @@ get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-
-better security (so better showing where's the mistake)
-regex support 
-UTF-8 charts 
-quotient types
-
 vscode support
-IDE support
-live debugging (not important)
 
 benchmarks (C++ vs Python vs animal)
 better documentation (so it wont be chaotic)
