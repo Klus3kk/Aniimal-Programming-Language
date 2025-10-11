@@ -247,8 +247,6 @@ get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-[tests] library
-* Tests.
 
 better security (so better showing where's the mistake)
 regex support 
