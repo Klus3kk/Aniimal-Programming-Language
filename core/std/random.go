@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 )
+
 import "time"
 
 func AnimalPounce(args []interface{}) interface{} {
@@ -24,12 +25,23 @@ func AnimalPounce(args []interface{}) interface{} {
 
 func AnimalStalk(args []interface{}) interface{} {
 	if len(args) != 1 {
+		return fmt.Errorf("stalk expects 1 argument: (target)")
+	}
+	target, ok := args[0].(float64)
+	if !ok {
+		return fmt.Errorf("stalk expects a number")
+	}
+	rand.Seed(time.Now().UnixNano())
+	return float64(rand.Intn(int(target)))
+}
+func AnimalProwl(args []interface{}) interface{} {
+	if len(args) != 1 {
 		return fmt.Errorf("prowl expects 1 list argument")
 	}
 	list, ok := args[0].([]interface{})
 	if !ok {
 		return fmt.Errorf("prowl expects a list")
-	}
+	}	
 	if len(list) == 0 {
 		return fmt.Errorf("cannot prowl in empty list")
 	}

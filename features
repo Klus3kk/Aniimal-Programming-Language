@@ -2,6 +2,7 @@
           ANIMAL LANGUAGE GUIDE
 =========================================
 
+
 COMMANDS
 --------
 animal [file.anml] [args...]    Run a file
@@ -10,7 +11,6 @@ animal --help                   Show this help message
 animal --version                Show version information
 animal --debug                  Enable debug mode
 animal --time                   Measure execution time
-
 
 LIST OF NODES
 -------------
@@ -233,22 +233,22 @@ snipe(string, symbol = " "):    Trim symbol from both ends of string
 ferret(string, start, length):  Substring from start index with given length
 badger(string, substring):      Check if substring is in string
 
+[sounds] 
+load_sound(path): Load a sound file and return a sound instance
+play_sound(sound): Play the given sound instance
+stop_sound(sound): Stop the given sound instance
+set_volume(sound, volume): Set the volume (0.0 to 1.0) for the sound instance
+is_playing(sound): Check if the sound instance is currently playing
+get_duration(sound): Get the total duration of the sound in seconds
+get_current_time(sound): Get the current playback time of the sound in seconds
+set_current_time(sound, time): Set the current playback time of the sound in seconds
+set_loop(sound, loop): Set whether the sound should loop when it reaches the end
+get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-[dscience] library
-* Add graphs, advanced math functions, data manipulation, statistics
 [tests] library
 * Tests.
-[gui] library
-* Window creation (for Windows/Linux), components like buttons, lists, ready-to-use guis, cross-platform, handling user events, text boxes, progress bar, menu, 
-* Layout management
-[sounds] library
-* bit sounds, mp3 reading, ready sounds
-[2dgraphics] library?
-* drawing shapes (pixels, lines, rectangles), handling sprites with transformations, key inputs, 
-
-support for custom libraries
 
 better security (so better showing where's the mistake)
 regex support 
@@ -257,8 +257,7 @@ quotient types
 
 vscode support
 IDE support
-live debugging
+live debugging (not important)
 
 benchmarks (C++ vs Python vs animal)
 better documentation (so it wont be chaotic)
-

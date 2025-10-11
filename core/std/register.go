@@ -41,21 +41,17 @@ func RegisterStandardLibrary(symbolTable *core.SymbolTable) {
 	symbolTable.Set("ferret", AnimalFerret)
 	symbolTable.Set("badger", AnimalBadger)
 
-	// Algorithms
-	symbolTable.Set("cluesort", AnimalClueSort)
-
-	// 2D Graphics
-
-	
 	// Sounds
-
-
-	// GUI
-
-
-	// DScience
-
-
+	symbolTable.Set("load_sound", AnimalLoadSound)
+	symbolTable.Set("play_sound", AnimalPlaySound)
+	symbolTable.Set("stop_sound", AnimalStopSound)
+	symbolTable.Set("set_volume", AnimalSetVolume)
+	symbolTable.Set("is_playing", AnimalIsPlaying)
+	symbolTable.Set("get_duration", AnimalGetDuration)
+	symbolTable.Set("get_current_time", AnimalGetCurrentTime)
+	symbolTable.Set("set_current_time", AnimalSetCurrentTime)
+	symbolTable.Set("set_loop", AnimalSetLoop)
+	symbolTable.Set("get_loop", AnimalGetLoop)
 
 	// Tests
 

@@ -58,11 +58,14 @@ Complete documentation is available at [animal.readthedocs.io](https://animal.re
 
 ```animal
 -- Conditionals
-if sniff x == 10 {
-    roar "x equals 10"
-} else {
-    roar "x does not equal 10"
+n -> 5
+
+growl n <= 1 {
+    roar 1 
+} wag {
+    roar n moo n 
 }
+
 
 -- Loops
 leap i from 0 to 5 {
