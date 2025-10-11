@@ -247,7 +247,5 @@ get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-vscode support
-
 benchmarks (C++ vs Python vs animal)
 better documentation (so it wont be chaotic)
