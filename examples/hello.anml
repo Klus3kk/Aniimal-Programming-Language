@@ -3,3 +3,7 @@ howl greet(name) {
 }
 
 greet("Bruce")
+
+greet("Diana")
+
+
