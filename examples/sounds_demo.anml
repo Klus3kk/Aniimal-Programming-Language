@@ -1,0 +1,31 @@
+:: Sounds demo for Animal language
+:: This demo uses the std sound API implemented as placeholders.
+
+sound -> load_sound("assets/beep.mp3")
+roar "Loaded sound:", sound
+
+roar "Play sound..."
+play_sound(sound)
+
+roar "Is playing?", is_playing(sound)
+
+roar "Set volume to 0.5"
+set_volume(sound, 0.5)
+
+roar "Wait a bit (simulated)"
+:: In actual runtime you might have sleep; here we just query current time
+roar "Current time:", get_current_time(sound)
+
+roar "Set current time to 2.0 seconds"
+set_current_time(sound, 2.0)
+roar "Current time now:", get_current_time(sound)
+
+roar "Enable loop"
+set_loop(sound, true)
+roar "Loop?", get_loop(sound)
+
+roar "Stop sound"
+stop_sound(sound)
+roar "Is playing?", is_playing(sound)
+
+roar "Done"

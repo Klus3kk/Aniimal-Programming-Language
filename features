@@ -233,32 +233,21 @@ snipe(string, symbol = " "):    Trim symbol from both ends of string
 ferret(string, start, length):  Substring from start index with given length
 badger(string, substring):      Check if substring is in string
 
+[sounds] 
+load_sound(path): Load a sound file and return a sound instance
+play_sound(sound): Play the given sound instance
+stop_sound(sound): Stop the given sound instance
+set_volume(sound, volume): Set the volume (0.0 to 1.0) for the sound instance
+is_playing(sound): Check if the sound instance is currently playing
+get_duration(sound): Get the total duration of the sound in seconds
+get_current_time(sound): Get the current playback time of the sound in seconds
+set_current_time(sound, time): Set the current playback time of the sound in seconds
+set_loop(sound, loop): Set whether the sound should loop when it reaches the end
+get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-repair commants online
-
-if sniff x == 10 {
-    roar "x equals 10"
-} else {
-    roar "x does not equal 10"
-}
-Error: index out of bounds
-
-[tests] library
-* Tests.
-[sounds] library
-* bit sounds, mp3 reading, ready sounds
-
-better security (so better showing where's the mistake)
-regex support 
-UTF-8 charts 
-quotient types
-
 vscode support
-IDE support
-live debugging (not important)
 
 benchmarks (C++ vs Python vs animal)
 better documentation (so it wont be chaotic)
-
