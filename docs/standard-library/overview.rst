@@ -12,7 +12,8 @@ The standard library is organized into several categories:
 2. **List Functions** - Tools for working with and manipulating lists
 3. **String Functions** - String manipulation and processing
 4. **I/O Functions** - Reading from and writing to console and files
-5. **Random Functions** - Random number generation and randomization tools
+5. **Audio Functions** - Lightweight helpers for loading and controlling sounds
+6. **Random Functions** - Random number generation and randomization tools
 
 How to Use the Standard Library
 -----------------------------
@@ -101,12 +102,24 @@ String Functions
 
    * - Function
      - Description
-   * - ``purr``
-     - String concatenation operator
-   * - ``pelt(value, times)``
-     - Repeats a value as a string
    * - ``nuzzle(str1, str2)``
      - Joins two strings (function form of purr)
+   * - ``pelt(value, times)``
+     - Repeats a value as a string
+   * - ``rat(text)``
+     - Converts *text* to uppercase
+   * - ``mole(text)``
+     - Converts *text* to lowercase
+   * - ``snipe(text, symbol = " ")``
+     - Trims leading and trailing occurrences of *symbol*
+   * - ``ferret(text, start, length)``
+     - Returns a substring from *text*
+   * - ``badger(text, needle)``
+     - Checks whether *needle* occurs in *text*
+   * - ``squirrel(text, delimiter)``
+     - Splits *text* into a list using *delimiter*
+   * - ``parrot(list)``
+     - Joins a list of strings into one string
 
 See :doc:`string-functions` for detailed documentation.
 
@@ -137,6 +150,38 @@ I/O Functions
      - Reads and parses a CSV file
 
 See :doc:`io-functions` for detailed documentation.
+
+Audio Functions
+~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Function
+     - Description
+   * - ``load_sound(path)``
+     - Loads an audio file and returns a handle
+   * - ``play_sound(sound)``
+     - Starts playback
+   * - ``stop_sound(sound)``
+     - Stops playback and rewinds
+   * - ``set_volume(sound, value)``
+     - Sets volume (0.0–1.0)
+   * - ``set_loop(sound, loop)``
+     - Enables or disables looping
+   * - ``set_current_time(sound, seconds)``
+     - Seeks to a position in seconds
+   * - ``is_playing(sound)``
+     - Returns whether playback is active
+   * - ``get_duration(sound)``
+     - Returns the total length
+   * - ``get_current_time(sound)``
+     - Returns the current playback time
+   * - ``get_loop(sound)``
+     - Returns whether looping is enabled
+
+See :doc:`audio-functions` for detailed documentation.
 
 Random Functions
 ~~~~~~~~~~~~~
@@ -195,4 +240,3 @@ Example of a standard library function implementation:
        // Register the new function
        symbolTable.Set("example_function", AnimalExampleFunction)
    }
-

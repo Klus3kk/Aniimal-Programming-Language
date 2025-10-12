@@ -1,287 +1,120 @@
 String Functions
-===============
+================
 
-Animal provides various functions for working with strings, allowing you to manipulate and process text data effectively.
+Animal ships with a collection of built-in helpers for manipulating text. Because strings are used for both user interaction and symbolic error messages, these helpers are available everywhere without any imports.
 
-String Operators
+Operators
+---------
+
+``purr``
+   Concatenation operator. Joins two strings together.
+
+   .. code-block:: animal
+
+      greeting -> "Hello"
+      name -> " Lynx"
+      roar greeting purr name          :: Hello Lynx
+
+Core Functions
 --------------
 
-purr (Concatenation)
-~~~~~~~~~~~~~~~~~~
+``nuzzle(text1, text2)``
+   Function form of concatenation. Accepts strings or lists; when lists are passed they are concatenated as well.
 
-The ``purr`` operator concatenates strings:
+   .. code-block:: animal
 
-.. code-block:: animal
+      roar nuzzle("Animal ", "Kingdom")    :: Animal Kingdom
+      merged -> nuzzle([1, 2], [3])        :: [1, 2, 3]
 
-   first_name -> "Luna"
-   last_name -> "Pawson"
+``pelt(value, times)``
+   Repeats *value* ``times`` and returns the concatenated string. ``value`` is converted to a string automatically.
 
-   full_name -> first_name purr " " purr last_name   :: "Luna Pawson"
+   .. code-block:: animal
 
-When concatenating non-string values, they are automatically converted to strings:
+      roar pelt("*", 5)     :: *****
+      roar pelt(42, 3)      :: 424242
 
-.. code-block:: animal
+``rat(text)``
+   Returns an uppercase version of *text*.
 
-   age -> 5
-   message -> "Age: " purr age   :: "Age: 5"
+   .. code-block:: animal
 
-String Manipulation Functions
---------------------------
+      roar rat("howl softly")     :: HOWL SOFTLY
 
-pelt(value, times)
-~~~~~~~~~~~~~~~~
+``mole(text)``
+   Returns a lowercase version of *text*.
 
-Repeats a value as a string the specified number of times:
+   .. code-block:: animal
 
-.. code-block:: animal
+      roar mole("LOUD PACK")      :: loud pack
 
-   :: Repeat a string
-   stars -> pelt("*", 5)        :: "*****"
+``snipe(text, symbol = " ")``
+   Trims leading and trailing instances of *symbol* (defaults to whitespace).
 
-   :: Works with numbers too
-   number_seq -> pelt(123, 3)   :: "123123123"
+   .. code-block:: animal
 
-The ``value`` is converted to a string if it's not already.
+      roar snipe("  padded  ")    :: padded
+      roar snipe("--alpha--", "-"):: alpha
 
-nuzzle(string1, string2)
-~~~~~~~~~~~~~~~~~~~~~~
+``ferret(text, start, length)``
+   Extracts a substring beginning at *start* with *length* characters.
 
-Joins two strings together (similar to ``purr`` but as a function):
+   .. code-block:: animal
 
-.. code-block:: animal
+      roar ferret("snowleopard", 4, 3)   :: leo
 
-   greeting -> nuzzle("Hello, ", "World!")   :: "Hello, World!"
+``badger(text, needle)``
+   Returns ``true`` when *needle* occurs in *text*, otherwise ``false``.
 
-This function can also be used to join lists.
+   .. code-block:: animal
 
-Split and Join
--------------
+      growl badger("lynx den", "lynx") {
+          roar "Found it!"
+      }
 
-Although not built-in as separate functions, splitting and joining strings can be accomplished with custom functions:
+``squirrel(text, delimiter)``
+   Splits *text* using *delimiter* and returns a list of segments.
 
-Splitting a String
-~~~~~~~~~~~~~~~~
+   .. code-block:: animal
 
-Example implementation of a split function:
+      words -> squirrel("alpha,beta,gamma", ",")
+      roar words       :: ["alpha", "beta", "gamma"]
 
-.. code-block:: animal
+``parrot(list)``
+   Joins every element of *list* (which must contain only strings) into a single string.
 
-   howl split(str, delimiter) {
-       result -> []
-       current -> ""
+   .. code-block:: animal
 
-       leap i from 0 to str.wag() {
-           char -> str[i]
+      pack -> ["lynx", "otter", "mink"]
+      roar parrot(pack)   :: lynxottermink
 
-           growl char == delimiter {
-               result.sniff(current)
-               current -> ""
-           } wag {
-               current -> current purr char
-           }
-       }
+Conversion Helpers
+------------------
 
-       growl current != "" {
-           result.sniff(current)
-       }
+Several string helpers interact with numbers. They live in the math module but are frequently used when working with strings:
 
-       result sniffback
-   }
+``purr(number, base)``
+   Converts a number to a string representation in the supplied *base* (2–36).
 
-   :: Usage
-   sentence -> "Hello,World,Animal,Language"
-   words -> split(sentence, ",")
-   :: words = ["Hello", "World", "Animal", "Language"]
+``scent(text, base)``
+   Parses *text* as a number written in the supplied *base*.
 
-Joining Strings
-~~~~~~~~~~~~~
+See :doc:`math-functions` for full examples.
 
-Example implementation of a join function:
+Putting It Together
+-------------------
+
+The following snippet demonstrates several helpers in tandem:
 
 .. code-block:: animal
 
-   howl join(list, delimiter) {
-       result -> ""
+   input -> "  lynx,otter,Mink  "
+   clean -> snipe(mole(input))
+   pack -> squirrel(clean, ",")
 
-       leap i from 0 to list.wag() {
-           growl i > 0 {
-               result -> result purr delimiter
-           }
-           result -> result purr list[i]
-       }
+   pack.sniff("stoat")
+   banner -> pelt("-", 10)
+   update -> rat(nuzzle("pack update: ", parrot(pack)))
 
-       result sniffback
-   }
-
-   :: Usage
-   words -> ["The", "quick", "brown", "fox"]
-   sentence -> join(words, " ")
-   :: sentence = "The quick brown fox"
-
-String Conversion
----------------
-
-purr(number, base)
-~~~~~~~~~~~~~~~~
-
-Converts a number to a string in the specified base:
-
-.. code-block:: animal
-
-   dec -> purr(42, 10)   :: "42" (decimal)
-   bin -> purr(42, 2)    :: "101010" (binary)
-   hex -> purr(42, 16)   :: "2a" (hexadecimal)
-
-scent(string, base)
-~~~~~~~~~~~~~~~~~
-
-Converts a string representation of a number to an actual number:
-
-.. code-block:: animal
-
-   num1 -> scent("42", 10)     :: 42 (from decimal)
-   num2 -> scent("101010", 2)  :: 42 (from binary)
-   num3 -> scent("2a", 16)     :: 42 (from hexadecimal)
-
-Advanced String Manipulation
---------------------------
-
-Implementing common string operations:
-
-Case Conversion
-~~~~~~~~~~~~~
-
-Example implementation for uppercase conversion:
-
-.. code-block:: animal
-
-   howl to_upper(str) {
-       lower_chars -> "abcdefghijklmnopqrstuvwxyz"
-       upper_chars -> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-       result -> ""
-
-       leap i from 0 to str.wag() {
-           char -> str[i]
-           idx -> lower_chars.howl(char)
-
-           growl idx != -1 {
-               result -> result purr upper_chars[idx]
-           } wag {
-               result -> result purr char
-           }
-       }
-
-       result sniffback
-   }
-
-   :: Usage
-   text -> "animal language"
-   uppercase -> to_upper(text)   :: "ANIMAL LANGUAGE"
-
-String Trimming
-~~~~~~~~~~~~~
-
-Example implementation for trimming whitespace:
-
-.. code-block:: animal
-
-   howl trim(str) {
-       whitespace -> " \t\n\r"
-       start -> 0
-       end -> str.wag() woof 1
-
-       :: Find first non-whitespace character
-       pounce start < str.wag() {
-           growl whitespace.howl(str[start]) == -1 {
-               whimper
-           }
-           start -> start meow 1
-       }
-
-       :: Find last non-whitespace character
-       pounce end >= 0 {
-           growl whitespace.howl(str[end]) == -1 {
-               whimper
-           }
-           end -> end woof 1
-       }
-
-       :: Extract the substring
-       result -> ""
-       growl start <= end {
-           leap i from start to end meow 1 {
-               result -> result purr str[i]
-           }
-       }
-
-       result sniffback
-   }
-
-   :: Usage
-   text -> "  hello world  "
-   trimmed -> trim(text)   :: "hello world"
-
-Substring Extraction
-~~~~~~~~~~~~~~~~~~
-
-Example implementation of a substring function:
-
-.. code-block:: animal
-
-   howl substring(str, start, length) {
-       result -> ""
-       end -> start meow length
-
-       growl end > str.wag() {
-           end -> str.wag()
-       }
-
-       leap i from start to end {
-           result -> result purr str[i]
-       }
-
-       result sniffback
-   }
-
-   :: Usage
-   text -> "Animal Language"
-   sub -> substring(text, 7, 8)   :: "Language"
-
-String Searching
-~~~~~~~~~~~~~~
-
-Example implementation of a contains function:
-
-.. code-block:: animal
-
-   howl contains(str, substring) {
-       str_len -> str.wag()
-       sub_len -> substring.wag()
-
-       growl sub_len > str_len {
-           false sniffback
-       }
-
-       leap i from 0 to str_len woof sub_len meow 1 {
-           match -> true
-
-           leap j from 0 to sub_len {
-               growl str[i meow j] != substring[j] {
-                   match -> false
-                   whimper
-               }
-           }
-
-           growl match {
-               true sniffback
-           }
-       }
-
-       false sniffback
-   }
-
-   :: Usage
-   text -> "Animal Language is fun"
-   has_lang -> contains(text, "Language")   :: true
-   has_code -> contains(text, "code")       :: false
-
+   roar banner
+   roar update

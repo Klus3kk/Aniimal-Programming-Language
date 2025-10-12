@@ -247,5 +247,5 @@ get_loop(sound): Get whether the sound is set to loop
 
 TODO
 ----
-website update
-benchmarks (C++ vs Python vs animal)
+website update (so that everything works)
+benchmarks (C++ vs Python vs animal) (bubble sort, fibonacchi, prime factorization)

@@ -56,6 +56,7 @@ Contents
    standard-library/list-functions
    standard-library/string-functions
    standard-library/io-functions
+   standard-library/audio-functions
 
 .. toctree::
    :maxdepth: 2

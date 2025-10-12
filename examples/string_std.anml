@@ -1,0 +1,42 @@
+:: Demonstrates built-in string helpers from Animal's standard library
+sentence -> "  Lynx,Otter,Mink  "
+roar "Original:", sentence
+
+trimmed -> snipe(sentence)                 :: remove surrounding whitespace
+lowered -> mole(trimmed)                   :: lowercase version
+uppered -> rat(trimmed)                    :: uppercase version
+
+roar "Trimmed:", trimmed
+roar "Lowercase:", lowered
+roar "Uppercase:", uppered
+
+pack -> squirrel(lowered, ",")             :: split into a list
+roar "Split pack:", pack
+
+pack.sniff("stoat")
+
+:: show list concatenation
+more -> ["ermine"]
+merged -> nuzzle(pack, more)
+roar "After merge:", merged
+
+joined -> nuzzle("Pack: ", parrot(merged))
+roar joined
+
+banner -> pelt("-", 12)
+roar banner
+roar rat(nuzzle("pack update: ", parrot(pack)))
+roar "Pack size:", pack.wag()
+
+lookup -> "otter"
+growl badger(lowered, lookup) {
+    idx -> pack.howl(lookup)
+    roar lookup, "found at index", idx
+} wag {
+    roar lookup, "is missing"
+}
+
+slice -> ferret(trimmed, 2, 3)
+roar "Slice (pos 2 len 3):", slice
+
+
