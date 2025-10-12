@@ -1,0 +1,10 @@
+algorithm,language,iterations,avg_time_ms,total_time_ms,peak_memory_bytes,success
+bubble_sort,cpp,50,7.974,398.711,3923968,True
+bubble_sort,python,50,24.621,1231.063,10252288,True
+bubble_sort,animal,50,12.673,633.631,6602752,True
+fibonacci,cpp,50,7.412,370.619,3919872,True
+fibonacci,python,50,23.879,1193.972,10252288,True
+fibonacci,animal,50,12.887,644.345,6578176,True
+prime_factor,cpp,50,7.821,391.054,3915776,True
+prime_factor,python,50,23.866,1193.290,10248192,True
+prime_factor,animal,50,12.510,625.518,6598656,True

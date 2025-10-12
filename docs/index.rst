@@ -62,6 +62,7 @@ Contents
    :caption: Development
 
    development/architecture
+   development/benchmarks
    development/contributing
    development/testing
    development/roadmap
