@@ -106,23 +106,6 @@ Animal supports recursive functions:
 
    roar factorial(5)  :: Prints 120
 
-Advanced Example: Higher-Order Functions
--------------------------------------
-
-Functions can be passed as arguments to other functions:
-
-.. code-block:: animal
-
-   howl apply_twice(func, value) {
-       func(func(value)) sniffback
-   }
-
-   howl double(x) {
-       x moo 2 sniffback
-   }
-
-   result -> apply_twice(double, 3)  :: result = 12
-
 Function Limitations
 -----------------
 
