@@ -11,7 +11,7 @@ The simplest Animal program:
 .. code-block:: animal
 
    :: Hello World in Animal
-   roar "Hello, Animal World!"
+   roar "Hello World!"
 
 Variables and Basic Operations
 ----------------------------
@@ -290,7 +290,7 @@ A complete calculator program:
        roar "Operation (meow/woof/moo/drone):"
        listen sniff
 
-    roar "Operation (meow/woof/moo/drone):"
+       roar "Operation (meow/woof/moo/drone):"
        listen sniffback
    }
 

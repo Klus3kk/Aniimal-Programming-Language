@@ -12,7 +12,7 @@ Let's start with a simple "Hello World" program:
 
    .. code-block:: animal
 
-      roar "Hello, Animal World!"
+      roar "Hello World!"
 
 2. Run the program:
 
@@ -20,7 +20,7 @@ Let's start with a simple "Hello World" program:
 
       animal hello.anml
 
-You should see ``Hello, Animal World!`` printed to the console.
+You should see ``Hello World!`` printed to the console.
 
 Basic Syntax
 -----------
@@ -166,7 +166,7 @@ Use ``try`` blocks to catch runtime issues or symbolic errors raised with ``*{ .
 Next Steps
 ----------
 
-Now that you know the basics, explore:
+Now that you know the basics, let's explore more:
 
 - :doc:`/language-reference/syntax` for detailed grammar rules
 - :doc:`/language-reference/data-structures` for more on lists and nests
