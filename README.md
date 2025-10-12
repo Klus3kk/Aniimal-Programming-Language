@@ -113,6 +113,16 @@ drop(log_path, "Pack members: " purr pack)
 }*
 ```
 
+## Benchmarks
+
+Compare Animal with Python and C++ using the sample programs in `benchmarks/`. Each algorithm (bubble sort, Fibonacci, prime factorisation) has one file per language under `benchmarks/animal`, `benchmarks/python`, and `benchmarks/cpp`.
+
+- Run the Animal versions with `go run ./cmd/animal benchmarks/animal/<algo>.anml` (or any locally installed `animal` binary).
+- Execute the Python scripts with `python3 benchmarks/python/<algo>.py`.
+- Compile the C++ sources using `g++ -O3 benchmarks/cpp/<algo>.cpp -o benchmarks/cpp/<algo>` and run the resulting binaries.
+
+Tweak input sizes as needed to perform your own timing experiments.
+
 ## License
 
 Animal is released under the [MIT License](LICENSE).

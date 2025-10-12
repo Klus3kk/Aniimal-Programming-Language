@@ -1,0 +1,31 @@
+:: Bubble sort benchmark in Animal language (pairwise passes without in-place assignment)
+numbers -> [9,5,2,7,1,10,3]
+
+size -> numbers.wag()
+done -> false
+
+pounce done == false {
+    swapped -> false
+    next -> []
+    carry -> numbers[0]
+
+    leap j from 1 to size {
+        current -> numbers[j]
+        growl carry > current {
+            next.sniff(current)
+            swapped -> true
+        } wag {
+            next.sniff(carry)
+            carry -> current
+        }
+    }
+
+    next.sniff(carry)
+    numbers -> next
+
+    growl swapped == false {
+        done -> true
+    }
+}
+
+roar "Sorted:", numbers

@@ -198,6 +198,7 @@ Type mismatch throws runtime error.
 STANDARD LIBRARY
 ----------------
 [list]
+
 paw(x, min, max)       Clamp number
 
 burrow(n)              List of n nil
@@ -207,7 +208,7 @@ howl(list, item)       Find index
 chase(x, n)            Repeat element
 trace(list)            Cumulative sum
 trail(list)            Prefixes of list
-pelt(value, times)     Repeat as string
+pelt(value, times)     Repeat string
 howlpack(list, item)   Find all indexes
 nest(value, depth)     Wrap value in nested lists
 
@@ -245,7 +246,8 @@ set_current_time(sound, time): Set the current playback time of the sound in sec
 set_loop(sound, loop): Set whether the sound should loop when it reaches the end
 get_loop(sound): Get whether the sound is set to loop
 
+
 TODO
 ----
 website update
-benchmarks (C++ vs Python vs animal)
+better documentation (so it wont be chaotic)
