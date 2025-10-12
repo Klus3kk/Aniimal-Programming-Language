@@ -1,7 +1,7 @@
 Benchmarks
 ==========
 
-Average of 50 runs per language (lower is better). Source: ``benchmarks/results/benchmarks.csv``.
+Average of 50 runs per language (lower is better). 
 
 Bubble Sort
 -----------
