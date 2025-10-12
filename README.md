@@ -4,7 +4,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/animal-lang/animal)](https://goreportcard.com/report/github.com/animal-lang/animal)
 [![Release](https://img.shields.io/github/v/release/animal-lang/animal)](https://github.com/animal-lang/animal/releases)
 
-Animal is a programming language where operators, control flow and data structures are expressed with animal calls and behaviors with fully‑feathered (get it?) language with functions, nests (classes), lists, file I/O and symbolic error handling.
+Animal is a programming language where operators, control flow and data structures are expressed with animal calls and behaviors with fully‑feathered **(get it?)** language with functions, nests (classes), lists, file I/O and symbolic error handling.
 
 ## Quick Start
 
@@ -46,7 +46,7 @@ roar "Total:", total
 
 - **VS Code** – Install the [Animal Language extension](https://marketplace.visualstudio.com/items?itemName=klus3kk.animal) for syntax highlighting, icon theming and language configuration.
 
-- **Online playground** – Try the language directly in your browser at the [Animal Playground](https://animal-lang.github.io/animal-playground).
+- **Online playground** – Try the language directly in your browser at [Animal Playground](https://animal-lang.github.io/animal-playground).
 
 ## Documentation
 
