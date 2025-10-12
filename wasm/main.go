@@ -2,7 +2,6 @@ package main
 
 import (
 	"animal/core"
-	"animal/core/std"
 	"syscall/js"
 )
 
@@ -10,7 +9,6 @@ func runAnimal(this js.Value, args []js.Value) interface{} {
 	code := args[0].String()
 
 	globalSymbolTable := core.NewSymbolTable()
-	std.RegisterStandardLibrary(globalSymbolTable)
 	context := &core.Context{
 		DisplayName:  "<browser>",
 		Symbol_Table: globalSymbolTable,

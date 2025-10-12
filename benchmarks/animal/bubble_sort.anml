@@ -1,32 +1,31 @@
-:: Selection-based sort benchmark in Animal language
+:: Bubble sort benchmark in Animal language (pairwise passes without in-place assignment)
 numbers -> [9,5,2,7,1,10,3]
 
-sorted -> []
-remaining -> numbers
+size -> numbers.wag()
+done -> false
 
-pounce remaining.wag() > 0 {
-    size -> remaining.wag()
-    min_value -> remaining[0]
-    min_index -> 0
+pounce done == false {
+    swapped -> false
+    next -> []
+    carry -> numbers[0]
 
     leap j from 1 to size {
-        value -> remaining[j]
-        growl value < min_value {
-            min_value -> value
-            min_index -> j
+        current -> numbers[j]
+        growl carry > current {
+            next.sniff(current)
+            swapped -> true
+        } wag {
+            next.sniff(carry)
+            carry -> current
         }
     }
 
-    sorted.sniff(min_value)
+    next.sniff(carry)
+    numbers -> next
 
-    next_remaining -> []
-    leap j from 0 to size {
-        growl j != min_index {
-            next_remaining.sniff(remaining[j])
-        }
+    growl swapped == false {
+        done -> true
     }
-
-    remaining -> next_remaining
 }
 
-roar "Sorted:", sorted
+roar "Sorted:", numbers

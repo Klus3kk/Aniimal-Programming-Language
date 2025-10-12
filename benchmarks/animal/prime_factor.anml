@@ -4,16 +4,16 @@ factors -> []
 
 divisor -> 2
 
-drive -> true
-pounce drive {
-    growl divisor moo divisor > number {
+pounce divisor <= number {
+    square -> divisor moo divisor
+    growl square > number {
         growl number > 1 {
             factors.sniff(number)
         }
         whimper
     }
 
-    pounce number squeak divisor == 0 {
+    growl number squeak divisor == 0 {
         factors.sniff(divisor)
         number -> number drone divisor
     } wag {
