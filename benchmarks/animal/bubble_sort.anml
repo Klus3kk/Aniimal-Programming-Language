@@ -1,0 +1,32 @@
+:: Selection-based sort benchmark in Animal language
+numbers -> [9,5,2,7,1,10,3]
+
+sorted -> []
+remaining -> numbers
+
+pounce remaining.wag() > 0 {
+    size -> remaining.wag()
+    min_value -> remaining[0]
+    min_index -> 0
+
+    leap j from 1 to size {
+        value -> remaining[j]
+        growl value < min_value {
+            min_value -> value
+            min_index -> j
+        }
+    }
+
+    sorted.sniff(min_value)
+
+    next_remaining -> []
+    leap j from 0 to size {
+        growl j != min_index {
+            next_remaining.sniff(remaining[j])
+        }
+    }
+
+    remaining -> next_remaining
+}
+
+roar "Sorted:", sorted

@@ -245,7 +245,4 @@ set_current_time(sound, time): Set the current playback time of the sound in sec
 set_loop(sound, loop): Set whether the sound should loop when it reaches the end
 get_loop(sound): Get whether the sound is set to loop
 
-TODO
-----
-website update (so that everything works)
-benchmarks (C++ vs Python vs animal) (bubble sort, fibonacchi, prime factorization)
+

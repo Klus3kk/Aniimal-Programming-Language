@@ -1,0 +1,28 @@
+:: Prime factorisation benchmark in Animal
+number -> 13195
+factors -> []
+
+divisor -> 2
+
+drive -> true
+pounce drive {
+    growl divisor moo divisor > number {
+        growl number > 1 {
+            factors.sniff(number)
+        }
+        whimper
+    }
+
+    pounce number squeak divisor == 0 {
+        factors.sniff(divisor)
+        number -> number drone divisor
+    } wag {
+        growl divisor == 2 {
+            divisor -> 3
+        } wag {
+            divisor -> divisor meow 2
+        }
+    }
+}
+
+roar "Factors:", factors
