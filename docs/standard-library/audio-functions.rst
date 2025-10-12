@@ -1,10 +1,7 @@
 Audio Functions
 ===============
 
-Animal includes a handful of helpers for lightweight audio playback. They are primarily intended for games, interactive programs, or teaching environments where sound feedback is useful.
-
-.. note::
-   Audio helpers rely on the host runtime. They are available in the desktop interpreter; support inside the WebAssembly build depends on the browser.
+Animal includes a handful of helpers for lightweight audio playback. For now, these are just placeholders, you can't do much with them yet, because audio files can't be loaded.
 
 Loading Sounds
 --------------
@@ -57,7 +54,7 @@ Example
 .. code-block:: animal
 
    howl play_intro() {
-       intro -> load_sound("sfx/intro.wav")
+       intro -> load_sound("sfx/intro.wav") :: NOT WORKING FOR NOW
        set_volume(intro, 0.6)
        set_loop(intro, false)
 
