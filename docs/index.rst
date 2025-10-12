@@ -1,7 +1,7 @@
 Welcome to Animal Language Documentation
 =====================================
 
-**Animal** is an innovative programming language that uses animal sounds and behaviors as programming constructs.
+**Animal** is a programming language that uses animal sounds and behaviors as programming constructs.
 It brings a playful and intuitive approach to programming while maintaining powerful capabilities.
 
 .. image:: https://img.shields.io/badge/version-1.1.0-blue
@@ -33,6 +33,7 @@ Contents
 
    getting-started/installation
    getting-started/quick-start
+   getting-started/editor-support
    getting-started/examples
 
 .. toctree::

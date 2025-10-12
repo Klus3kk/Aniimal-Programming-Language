@@ -1,4 +1,5 @@
-%debug :: debug mode activated
+%debug 
+:: debug mode activated
 
 howl factorial(n) {
     growl n <= 1 {
