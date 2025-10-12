@@ -4,19 +4,21 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/animal-lang/animal)](https://goreportcard.com/report/github.com/animal-lang/animal)
 [![Release](https://img.shields.io/github/v/release/animal-lang/animal)](https://github.com/animal-lang/animal/releases)
 
-Animal is a programming language where operators, control flow and data structures are expressed with animal calls and behaviors with fully‑feathered (im sorry i had to) language with functions, nests (classes), lists, file I/O and symbolic error handling.
+Animal is a programming language where operators, control flow and data structures are expressed with animal calls and behaviors with fully‑feathered (get it?) language with functions, nests (classes), lists, file I/O and symbolic error handling.
 
 ## Quick Start
 
 ```bash
 go install github.com/animal-lang/animal/cmd/animal@latest
+
 # Start the REPL
 animal --repl
+
 # Run a program
 animal path/to/script.anml
 ```
 
-A tiny sample:
+Try this simple Animal program:
 
 ```animal
 roar "Welcome to the animal kingdom!"
@@ -48,7 +50,7 @@ roar "Total:", total
 
 ## Documentation
 
-Full guides, language reference and standard library docs live at [animal.readthedocs.io](https://animal.readthedocs.io/).
+Full guides, language reference and standard library docs is available at [animal.readthedocs.io](https://animal.readthedocs.io/).
 
 ## Install from Source
 
@@ -57,6 +59,34 @@ git clone https://github.com/animal-lang/animal.git
 cd animal
 go build -o animal ./cmd/animal
 go test ./...
+```
+
+## Basic example
+
+```animal
+-- Conditionals
+n -> 5
+
+growl n <= 1 {
+    roar 1 
+} wag {
+    roar n moo n 
+}
+
+
+-- Loops
+leap i from 0 to 5 {
+    roar i
+}
+
+-- Functions
+howl calculate_area(length, width) {
+    length moo width sniffback  -- Multiplication
+}
+
+area -> calculate_area(5, 10)
+roar "Area:", area
+
 ```
 
 ## Example for lists, file I/O and symbolic errors
