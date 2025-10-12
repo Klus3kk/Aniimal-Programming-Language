@@ -1,5 +1,5 @@
 Quick Start Guide
-===============
+=================
 
 This guide will walk you through the basics of Animal language programming.
 
@@ -100,7 +100,7 @@ While loops use ``pounce``:
    }
 
 Functions
-~~~~~~~~
+~~~~~~~~~
 
 Define functions with ``howl``:
 
@@ -125,24 +125,50 @@ Return values using ``sniffback``:
    roar "Square:", result   :: Prints: Square: 16
 
 Lists
-~~~~
+~~~~~
 
 Create and manipulate lists:
 
 .. code-block:: animal
 
-   fruits -> ["apple", "banana", "cherry"]
-   fruits.sniff("orange")   :: Add item
+   pack -> ["lynx", "otter", "marten"]
+   pack.sniff("mink")        :: Append a value
+   pack.snarl()              :: Reverse in place
 
-   roar fruits[0]   :: Access by index
-   roar fruits.wag()   :: Get length
+   roar pack[0]              :: Access by index
+   roar pack.wag()           :: Get the length
+
+File I/O
+~~~~~~~~
+
+Animal comes with lightweight helpers for working with files:
+
+.. code-block:: animal
+
+   drop("log.txt", "Pack members: " purr pack)
+   contents -> fetch("log.txt")
+   roar contents
+
+Symbolic Error Handling
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Use ``try`` blocks to catch runtime issues or symbolic errors raised with ``*{ ... }*``:
+
+.. code-block:: animal
+
+   *[
+     roar "Doing risky work"
+     *{ "uh oh" }*
+   ]* *(
+     roar "Caught error:", _error
+   )*
 
 Next Steps
----------
+----------
 
-Now that you know the basics, try exploring:
+Now that you know the basics, explore:
 
-- :doc:`/language-reference/syntax` for detailed syntax rules
+- :doc:`/language-reference/syntax` for detailed grammar rules
 - :doc:`/language-reference/data-structures` for more on lists and nests
-- :doc:`/standard-library/overview` for built-in functions
-- :doc:`/getting-started/examples` for more code examples
+- :doc:`/standard-library/list-functions` for every list helper
+- :doc:`/getting-started/examples` for more complete programs
