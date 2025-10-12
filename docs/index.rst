@@ -2,7 +2,6 @@ Welcome to Animal Language Documentation
 =====================================
 
 **Animal** is a programming language that uses animal sounds and behaviors as programming constructs.
-It brings a playful and intuitive approach to programming while maintaining powerful capabilities.
 
 .. image:: https://img.shields.io/badge/version-1.1.0-blue
    :alt: Version 1.1.0
@@ -18,11 +17,11 @@ It brings a playful and intuitive approach to programming while maintaining powe
 Features
 --------
 
-* **Intuitive Syntax**: Animal sounds replace traditional operators - ``meow`` for addition, ``woof`` for subtraction
+* **Intuitive Syntax**: Animal sounds replace traditional operators, for example ``meow`` is for addition, ``woof`` is for subtraction etc.
 * **Expressive Control Flow**: ``growl``/``sniff``/``wag`` for conditionals, ``leap`` for for-loops, ``pounce`` for while-loops
 * **Powerful Data Structures**: Lists with built-in methods and nestable structures
 * **Custom Object System**: Define reusable components with the ``nest`` keyword
-* **Integrated File I/O**: Read and write files easily with animal-themed functions
+* **Integrated File I/O**: Read and write files with animal-themed functions
 
 Contents
 --------

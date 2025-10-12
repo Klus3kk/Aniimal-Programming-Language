@@ -1,7 +1,7 @@
 Architecture
 ============
 
-This document explains the internal architecture of the Animal language interpreter, providing insight into how it's designed and how the various components work together.
+This document explains the internal architecture of the Animal language interpreter.
 
 Overview
 -------
@@ -13,9 +13,9 @@ The Animal interpreter follows a classic language implementation pattern with th
 3. **Interpreter** - Executes the AST
 4. **Runtime** - Provides the execution environment, standard library, and error handling
 
-The interpreter is implemented in Go, making it fast, portable, and easy to extend.
+The interpreter is implemented in Go (and thanks to it :)) making it fast, portable, and easy to extend.
 
-The lexer (``core/lexer.go``) is responsible for reading the source code and converting it into tokens. This process is called lexical analysis or tokenization.
+The lexer (``core/lexer.go``) is responsible for reading the source code and converting it into tokens. 
 
 Key responsibilities:
 
@@ -44,7 +44,7 @@ Each token includes:
 Parser
 -----
 
-The parser (``core/parser.go``) takes the tokens from the lexer and builds an Abstract Syntax Tree (AST) according to the language grammar. The AST represents the structure and meaning of the program.
+The parser (``core/parser.go``) takes the tokens from the lexer and builds an Abstract Syntax Tree (AST) according to the language grammar. 
 
 Key responsibilities:
 
@@ -137,10 +137,11 @@ Code Organization
 
 The codebase is organized into these main directories:
 
+- ``benchmarks/`` - Performance benchmarks
 - ``cmd/animal/`` - Command-line interface entry point
 - ``core/`` - Core language implementation
-  - ``core/std/`` - Standard library functions
+- ``core/std/`` - Standard library functions
+- ``docs/`` - Documentation
+- ``examples/`` - Example Animal programs
 - ``tests/`` - Test suite
 - ``wasm/`` - WebAssembly support
-- ``examples/`` - Example Animal programs
-- ``docs/`` - Documentation
